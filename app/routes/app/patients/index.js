@@ -2,7 +2,14 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
   model(){
-    console.info("------------result: "+JSON.stringify(this.store.findAll('patient')));
     return this.store.findAll('patient');
+  },
+  actions: {
+    delete(patient){
+      let confirmation = confirm('您确定删除?');
+      if(confirmation){
+        patient.destroyRecord();
+      }
+    }
   }
 });

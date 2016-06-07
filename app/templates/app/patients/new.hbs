@@ -3,76 +3,36 @@
     <fieldset>
       <legend>录入患者信息</legend>
       <div class="col-md-6">
+        {{#form-field field=model.idCardNo}}身份证号{{/form-field}}
+        {{#form-field field=model.insurancecode}}医保号{{/form-field}}
+        {{#form-field field=model.patname}}姓名{{/form-field}}
         <div class="form-group">
-          <label for="inputEmail" class="col-md-2 control-label">身份证号</label>
+          <label class="col-md-2 control-label">性别</label>
           <div class="col-md-10">
-            <input class="form-control" id="inputEmail" type="text">
+            {{#x-select value=model.genderid class="form-control"}}
+              {{#x-option value=1}}男{{/x-option}}
+              {{#x-option value=2}}女{{/x-option}}
+            {{/x-select}}
           </div>
         </div>
         <div class="form-group">
-          <label for="inputPassword" class="col-md-2 control-label">医保号</label>
+          <label class="col-md-2 control-label">出生日期</label>
           <div class="col-md-10">
-            <input class="form-control" id="inputPassword" type="text" />
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="name" class="col-md-2 control-label">姓名</label>
-          <div class="col-md-10">
-            <input class="form-control" id="name" type="text" />
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="select" class="col-md-2 control-label">性别</label>
-          <div class="col-md-10">
-            <select class="form-control" id="select">
-              <option>男</option>
-              <option>女</option>
-            </select>
-          </div>
-        </div>
-        <div class="form-group">
-          <label class="col-md-2 control-label">生日</label>
-          <div class="col-md-10">
-            <input class="form-control" type="text" />
+            {{date-picker date=model.birthday valueFormat='YYYY-MM-DD' class="form-control"}}
           </div>
         </div>
       </div>
       <div class="col-md-6">
-        <div class="form-group">
-          <label class="col-md-2 control-label">住址</label>
-          <div class="col-md-10">
-            <input class="form-control" type="text" />
-          </div>
-        </div>
-        <div class="form-group">
-          <label class="col-md-2 control-label">邮编</label>
-          <div class="col-md-10">
-            <input class="form-control" type="text" />
-          </div>
-        </div>
-        <div class="form-group">
-          <label class="col-md-2 control-label">手机号</label>
-          <div class="col-md-10">
-            <input class="form-control" type="text" />
-          </div>
-        </div>
-        <div class="form-group">
-          <label class="col-md-2 control-label">电子邮箱</label>
-          <div class="col-md-10">
-            <input class="form-control" type="text" />
-          </div>
-        </div>
-        <div class="form-group">
-          <label class="col-md-2 control-label">电话号码</label>
-          <div class="col-md-10">
-            <input class="form-control" type="text" />
-          </div>
-        </div>
+        {{#form-field field=model.address}}住址{{/form-field}}
+        {{#form-field field=model.zipcode}}邮编{{/form-field}}
+        {{#form-field field=model.mobileno}}手机号{{/form-field}}
+        {{#form-field field=model.email}}电子邮箱{{/form-field}}
+        {{#form-field field=model.phoneno}}电话号码{{/form-field}}
       </div>
       <div class="form-group">
         <div class="col-md-10">
           <a type="reset" class="btn btn-default col-md-offset-2" href="/app/patients" role="button">返回</a>
-          <button type="submit" class="btn btn-primary col-md-offset-8">保存</button>
+          <button type="submit" class="btn btn-primary col-md-offset-8" {{action 'save' model}} >保存</button>
         </div>
       </div>
     </fieldset>

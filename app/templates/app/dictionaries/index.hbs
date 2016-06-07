@@ -1,5 +1,16 @@
 <div class="container">
   <h1>数据字典列表</h1>
   <hr />
-  <a href="/app/patients/new" class="btn btn-primary" role="button"><span class="glyphicon glyphicon-plus"></span>添加字典</a>
+  {{#link-to "app.dictionaries.new" class="btn btn-primary"}}<span class="glyphicon glyphicon-plus"></span>添加字典{{/link-to}}
+  <br />
+  <br />
+  <div class="row">
+    {{#dictionary-item}}{{/dictionary-item}}
+    {{#dictionary-item}}{{/dictionary-item}}
+    {{#dictionary-item}}{{/dictionary-item}}
+    {{#dictionary-item}}{{/dictionary-item}}
+    {{#dictionary-item}}{{/dictionary-item}}
+    {{#dictionary-item}}{{/dictionary-item}}
+    {{#dictionary-item}}{{/dictionary-item}}
+  </div>
 </div>

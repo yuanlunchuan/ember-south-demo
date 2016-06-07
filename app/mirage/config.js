@@ -1,110 +1,58 @@
 export default function() {
+  this.post('/patients', function(db, request) {
+    var patient = JSON.parse(request.requestBody).data;
+    patient = db.patients.insert(patient);
+    return {data: patient};
+  });
+
+  this.delete('/patients/:patient_id', function(db, request){
+    var id = request.params.patient_id;
+    return {data: db.patients.find(id)};
+  });
+
+  this.get('/patients/:patient_id', function(db, request){
+    var id = request.params.patient_id;
+    return {data: db.patients.find(id)};
+  });
+
+  this.patch('/patients/:patient_id', function(db, request){
+    var id = request.params.patient_id;
+    return {data: db.patients.find(id)};
+  });
+
+  this.patch('/hospitals/:hospital_id', function(db, request){
+    return {
+      data: {
+        type: 'hospital',
+        id: 1,
+        attributes: {
+          code: '2342',
+          hspname: '四川长江医院',
+          acronym: 'sccjyy',
+          comments: '医院设有普外科、骨外科、心血管内科、中医针灸、痔漏、口腔、呼吸内分泌内科、五官、皮肤、眼科、耳鼻咽喉科、妇产科等临床科室和急诊室。另有放射科、心电图室、彩色超声波室、胃镜室、检验科、B超室等辅助科室。 '
+        }
+      }
+    };
+  });
+
+  this.get('/hospitals/:hospital_id', function(){
+    return {
+      data: {
+        type: 'hospital',
+        id: 1,
+        attributes: {
+          code: '2342',
+          hspname: '四川长江医院',
+          acronym: 'sccjyy',
+          comments: '医院设有普外科、骨外科、心血管内科、中医针灸、痔漏、口腔、呼吸内分泌内科、五官、皮肤、眼科、耳鼻咽喉科、妇产科等临床科室和急诊室。另有放射科、心电图室、彩色超声波室、胃镜室、检验科、B超室等辅助科室。 '
+        }
+      }
+    };
+  });
+
   this.get('/patients', function(db, request) {
     return {
       data: db.patients
     };
   });
-
-  this.get('/patients/1', function(){
-    var patients = {
-      data: {
-        type: 'patients',
-        id: 1,
-        attributes:{
-          mrNo: '2016052500001',
-          hspId: '1213',
-          idCardNo: '5111231992',
-          insuranceCode: '333333322',
-          patName: '张三',
-          acromym: 'zs',
-          genderId: '001',
-          birthday: '1992-02-15',
-          address: '成都市武侯区',
-          zipcode: '614400',
-          phoneNo: '0833199202',
-          mobileNo: '13551031965',
-          email: '799652013@qq.com'
-        }
-      }};
-      return patients;
-  });
-  // These comments are here to help you get started. Feel free to delete them.
-
-  /*
-    Config (with defaults).
-
-    Note: these only affect routes defined *after* them!
-  */
-  // this.urlPrefix = '';    // make this `http://localhost:8080`, for example, if your API is on a different server
-  // this.namespace = '';    // make this `api`, for example, if your API is namespaced
-  // this.timing = 400;      // delay for each request, automatically set to 0 during testing
-
-  /*
-    Route shorthand cheatsheet
-  */
-  /*
-    GET shorthands
-
-    // Collections
-    this.get('/contacts');
-    this.get('/contacts', 'users');
-    this.get('/contacts', ['contacts', 'addresses']);
-
-    // Single objects
-    this.get('/contacts/:id');
-    this.get('/contacts/:id', 'user');
-    this.get('/contacts/:id', ['contact', 'addresses']);
-  */
-
-  /*
-    POST shorthands
-
-    this.post('/contacts');
-    this.post('/contacts', 'user'); // specify the type of resource to be created
-  */
-
-  /*
-    PUT shorthands
-
-    this.put('/contacts/:id');
-    this.put('/contacts/:id', 'user'); // specify the type of resource to be updated
-  */
-
-  /*
-    DELETE shorthands
-
-    this.del('/contacts/:id');
-    this.del('/contacts/:id', 'user'); // specify the type of resource to be deleted
-
-    // Single object + related resources. Make sure parent resource is first.
-    this.del('/contacts/:id', ['contact', 'addresses']);
-  */
-
-  /*
-    Function fallback. Manipulate data in the db via
-
-      - db.{collection}
-      - db.{collection}.find(id)
-      - db.{collection}.where(query)
-      - db.{collection}.update(target, attrs)
-      - db.{collection}.remove(target)
-
-    // Example: return a single object with related models
-    this.get('/contacts/:id', function(db, request) {
-      var contactId = +request.params.id;
-
-      return {
-        contact: db.contacts.find(contactId),
-        addresses: db.addresses.where({contact_id: contactId})
-      };
-    });
-
-  */
 }
-
-/*
-You can optionally export a config that is only loaded during tests
-export function testConfig() {
-
-}
-*/

@@ -1,2 +1,40 @@
-{{render 'form'}}
-{{outlet}}
+<div class="container well">
+  <form class="form-horizontal">
+    <fieldset>
+      <legend>录入患者信息</legend>
+      <div class="col-md-6">
+        {{#form-field field=model.idcardno}}身份证号{{/form-field}}
+        {{#form-field field=model.insurancecode}}医保号{{/form-field}}
+        {{#form-field field=model.patname}}姓名{{/form-field}}
+        <div class="form-group">
+          <label class="col-md-2 control-label">性别</label>
+          <div class="col-md-10">
+            {{#x-select value=model.genderid class="form-control"}}
+              {{#x-option value=1}}男{{/x-option}}
+              {{#x-option value=2}}女{{/x-option}}
+            {{/x-select}}
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-md-2 control-label">出生日期</label>
+          <div class="col-md-10">
+            {{date-picker date=model.birthday valueFormat='YYYY-MM-DD' class="form-control"}}
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        {{#form-field field=model.address}}住址{{/form-field}}
+        {{#form-field field=model.zipcode}}邮编{{/form-field}}
+        {{#form-field field=model.mobileno}}手机号{{/form-field}}
+        {{#form-field field=model.email}}电子邮箱{{/form-field}}
+        {{#form-field field=model.phoneno}}电话号码{{/form-field}}
+      </div>
+      <div class="form-group">
+        <div class="col-md-10">
+          <a type="reset" class="btn btn-default col-md-offset-2" href="/app/patients" role="button">返回</a>
+          <button type="submit" class="btn btn-primary col-md-offset-8" {{action 'save' model}} >保存</button>
+        </div>
+      </div>
+    </fieldset>
+  </form>
+</div>

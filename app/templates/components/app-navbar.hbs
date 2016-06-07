@@ -13,15 +13,14 @@
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="">
-          <a href="/app/patients">患者管理</a>
-        </li>
-        <li class="dropdown active">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">基础数据<span class="caret"></span>
+        {{#nav-link-to 'app.patients'}}患者管理{{/nav-link-to}}
+        {{#nav-link-to 'app.diagnosis'}}采集中心{{/nav-link-to}}
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">基础数据<span class="caret"></span>
           </a>
           <ul class="dropdown-menu">
-            <li><a href="/app/dictionaries">数据字典</a></li>
-            <li><a href="/app/hospitals">医院信息</a></li>
+            {{#nav-link-to 'app.dictionaries'}}数据字典{{/nav-link-to}}
+            {{#nav-link-to 'app.hospitals'}}医院信息{{/nav-link-to}}
           </ul>
         </li>
       </ul>

@@ -4,3 +4,42 @@ body{
 .border{
   border: 1px solid #f00;
 }
+#sessions-new{
+  background-image: url(/images/sessions/login_bg.jpg);
+  height: 650px;
+  background-size: cover;
+  hr{
+    margin: 0 70px;
+  }
+  input{
+    border: 0;
+    margin-left: 20px;
+  }
+  .login-area{
+    position:absolute;
+    top:50%;
+    left:50%;
+    width:400px;
+    height:200px;
+    margin-top:-100px;
+    margin-left:-200px;
+    background-color: #fff;
+    border-radius: 10px;
+    line-height:30px;
+    font-size:16px;
+    box-shadow:5px 5px 6px 0px #666;
+    .user-name{
+      margin-top: 10px;
+    }
+    .password{
+      margin-top: 10px;
+    }
+    .remenber-me{
+      padding-left: 70px;
+    }
+    button{
+      margin-top: 10px;
+      padding: 5px 120px;
+    }
+  }
+}

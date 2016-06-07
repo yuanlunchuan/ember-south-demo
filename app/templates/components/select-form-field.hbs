@@ -1,0 +1,10 @@
+<div class="form-group">
+  <label for="select" class="col-md-2 control-label">{{yield}}</label>
+  <div class="col-md-10">
+    <select class="form-control" value=field>
+      {{#each options as |item|}}
+        <option value={{item.label}}>{{item.value}}</option>
+      {{/each}}
+    </select>
+  </div>
+</div>

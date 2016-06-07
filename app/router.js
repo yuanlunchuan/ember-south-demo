@@ -6,6 +6,10 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
+  this.route('sessions', function() {
+    this.route('new');
+  });
+
   this.route('app', function() {
     this.route('patients', function() {
       this.route('new');
@@ -16,7 +20,14 @@ Router.map(function() {
     this.route('hospitals', function() {
       this.route('edit');
     });
-    this.route('dictionaries', function() {});
+    this.route('dictionaries', function() {
+      this.route('new');
+    });
+
+    this.route('sessions', function() {
+      this.route('new');
+    });
+    this.route('diagnosis', function() {});
   });
 });
 

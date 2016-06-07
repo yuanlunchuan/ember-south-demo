@@ -1,0 +1,27 @@
+<div class="container">
+  <form class="form-horizontal">
+    <fieldset>
+      <legend>录入字典数据</legend>
+      <div>
+        {{#form-field}}字典名称{{/form-field}}
+      </div>
+      <div class="col-md-4">
+        <div class="well">
+          {{#form-field}}名称{{/form-field}}
+          {{#form-field}}备注{{/form-field}}
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="well">
+          {{#form-field}}名称{{/form-field}}
+          {{#form-field}}备注{{/form-field}}
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="well text-center" style="height: 150px">
+          <button class="btn btn-primary" {{action "addDictionaryItem"}}>+</button>
+        </div>
+      </div>
+    </fieldset>
+  </form>
+</div>
