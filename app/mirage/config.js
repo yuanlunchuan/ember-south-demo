@@ -1,4 +1,50 @@
 export default function() {
+  this.get('/inspection-apply-dynamics', function(){
+    return {
+      data: [{
+        type: 'inspection-apply-dynamic',
+        id: 1,
+        attributes:{
+          firstName: 'zhang',
+          lastName: 'san',
+          birthday: '2015-2-3'
+        }
+      }]
+    };
+  });
+
+  this.get('/inspection-applies', function(){
+    return {
+      data: [{
+        type: 'inspection-applies',
+        id: 1,
+        attributes: {
+          reqId: '123',
+          hspId: '234',
+          mrNo: '231',
+          caseNo: '456',
+          reqDoctorId: '456',
+          reqdoctorname: 'zhangsan',
+          reqTime: '2015-02-23',
+          deptId: '789',
+          deptName: 'xindian',
+          examId: '0989',
+          admType: 'finish',
+          source: 'lai zi haha',
+          areaId: '2341',
+          bedId: '0976',
+          pacemaker: '',
+          reason: 'you have nothing.',
+          diaId: '0765',
+          diaName: 'diaName',
+          diaDesc: 'this is diaDesc',
+          report: 'report',
+          statusId: 'finish'
+        }
+      }]
+    };
+  });
+
   this.post('/patients', function(db, request) {
     var patient = JSON.parse(request.requestBody).data;
     patient = db.patients.insert(patient);

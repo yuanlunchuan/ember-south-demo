@@ -28,6 +28,7 @@ Router.map(function() {
       this.route('new');
     });
     this.route('diagnosis', function() {});
+    this.route('inspection-apply', function() {});
   });
 });
 

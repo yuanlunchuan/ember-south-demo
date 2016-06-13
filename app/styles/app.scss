@@ -4,6 +4,7 @@ body{
 .border{
   border: 1px solid #f00;
 }
+
 #sessions-new{
   background-image: url(/images/sessions/login_bg.jpg);
   height: 650px;
@@ -41,5 +42,11 @@ body{
       margin-top: 10px;
       padding: 5px 120px;
     }
+  }
+}
+
+#inspect-apply-index{
+  table{
+    margin-top: 30px;
   }
 }
