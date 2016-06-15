@@ -1,4 +1,17 @@
 export default function() {
+  this.post('/caseHistories', function(){
+    return {
+      data: {
+        id: 1,
+        type: 'case_histories',
+        attributes: {
+          name: 'zhangsan',
+          age: 123
+        }
+      }
+    };
+  });
+
   this.get('/books', function(){
     return {
       data: [{

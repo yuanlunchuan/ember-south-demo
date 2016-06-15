@@ -2,9 +2,11 @@ import Model from 'ember-data/model';
 import attr from 'ember-data/attr';
 
 export default Model.extend({
+  dicId: attr(),
   hspId: attr(),
-  code: attr(),
-  hspName: attr(),
   acronym: attr(),
-  comments: attr()
+  itemId: attr(),
+  itemName: attr(),
+  seq: attr(),
+  remark: attr()
 });
