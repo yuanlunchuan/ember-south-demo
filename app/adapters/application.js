@@ -8,7 +8,7 @@ export default DS.JSONAPIAdapter.extend({
     'Accept': 'application/json'
   },
   pathForType(type) {
-    let underscored = Ember.String.underscore(type);
-    return Ember.String.pluralize(underscored);
+    let camelize = type.camelize();
+    return Ember.String.pluralize(camelize);
   }
 });
