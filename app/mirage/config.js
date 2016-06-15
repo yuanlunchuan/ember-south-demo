@@ -1,4 +1,28 @@
 export default function() {
+  this.get('/books', function(){
+    return {
+      data: [{
+        id: 1,
+        type: 'book',
+        attributes: {
+          bookName: 'zhangsan'
+        }
+      },{
+        id: 2,
+        type: 'book',
+        attributes: {
+          bookName: 'lisi'
+        }
+      },{
+        id: 3,
+        type: 'book',
+        attributes: {
+          bookName: 'wanger'
+        }
+      }]
+    };
+  });
+
   this.get('/inspection-apply-dynamics', function(){
     return {
       data: [{

@@ -32,6 +32,7 @@ Router.map(function() {
       this.route('new');
     });
   });
+  this.route('books');
 });
 
 export default Router;
