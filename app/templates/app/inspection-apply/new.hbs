@@ -3,21 +3,31 @@
   <hr />
   <div class="well">
     <form class="form-inline">
-      {{#inline-form-field field=model.patName}}姓名{{/inline-form-field}}
-      {{#inline-form-field field=model.idCardNo}}身份证号{{/inline-form-field}}
-      {{#inline-form-field field=model.insuranceCode}}医保号{{/inline-form-field}}
+      {{#inline-form-field field=patient.patName}}姓名{{/inline-form-field}}
+      {{#inline-form-field field=patient.idCardNo}}身份证号{{/inline-form-field}}
+      {{#inline-form-field field=patient.insuranceCode}}医保号{{/inline-form-field}}
 
-      {{#inline-form-field field=model.address}}地址{{/inline-form-field}}
-      {{#inline-form-field field=model.zipcode}}邮编{{/inline-form-field}}
-      {{#inline-form-field field=model.phoneNo}}电话号码{{/inline-form-field}}
-      {{#inline-form-field field=model.mobileNo}}手机号码{{/inline-form-field}}
-      {{#inline-form-field field=model.email}}邮箱{{/inline-form-field}}
+      {{#inline-form-field field=patient.address}}地址{{/inline-form-field}}
+      {{#inline-form-field field=patient.zipcode}}邮编{{/inline-form-field}}
+      {{#inline-form-field field=patient.phoneNo}}电话号码{{/inline-form-field}}
+      {{#inline-form-field field=patient.mobileNo}}手机号码{{/inline-form-field}}
+      {{#inline-form-field field=patient.email}}邮箱{{/inline-form-field}}
 
       {{#inline-form-field}}国籍{{/inline-form-field}}
       {{#inline-form-field}}省{{/inline-form-field}}
       {{#inline-form-field}}市{{/inline-form-field}}
       {{#inline-form-field}}县/区{{/inline-form-field}}
       {{#inline-form-field}}镇{{/inline-form-field}}
+
+      <div class="form-group">
+        <lable>国籍</lable>
+        <select class="form-control input-sm">
+          {{#each regions as |region|}}
+            <option>{{region.regName}}</option>
+          {{/each}}
+        </select>
+      </div>
+
       <div class="form-group">
         <lable>性别</lable>
         <select class="form-control input-sm">
@@ -26,8 +36,8 @@
         </select>
       </div>
       <div class="form-group">
-        <label class="control-label">出生日期</label>
-        {{date-picker date=model.birthday valueFormat='YYYY-MM-DD' class="form-control input-sm"}}
+        <!-- <label class="control-label">出生日期</label> -->
+        {{!date-picker date=patient.birthday valueFormat='YYYY-MM-DD' class="form-control input-sm"}}
       </div>
       {{#inline-form-field}}人种{{/inline-form-field}}
       {{#inline-form-field}}血型{{/inline-form-field}}

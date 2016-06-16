@@ -2,7 +2,6 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
   model(){
-    console.info(this.get('nations'));
     return Ember.RSVP.hash({
       inspectionApplies: this.store.findAll('inspection-apply'),
       inspectionApplyDynamics: this.store.findAll('inspection-apply-dynamic')

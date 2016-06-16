@@ -1,4 +1,43 @@
 export default function() {
+  this.get('/regions', function(){
+    return {
+      data: [{
+        id: 1,
+        type: 'regions',
+        attributes: {
+          regId: 1,
+          regName: '中国',
+          regType: 1,
+          seq: 1,
+          parRegId: 0,
+          comments: ""
+        }
+      },{
+        id: 2,
+        type: 'regions',
+        attributes: {
+          regId: 2,
+          regName: '美国',
+          regType: 1,
+          seq: 2,
+          parRegId: 0,
+          comments: ''
+        }
+      },{
+        id: 3,
+        type: 'regions',
+        attributes: {
+          regId: 3,
+          regName: '德国',
+          regType: 1,
+          seq: 3,
+          parRegId: 0,
+          comments: ''
+        }
+      }]
+    };
+  });
+
   this.post('/caseHistories', function(){
     return {
       data: {
