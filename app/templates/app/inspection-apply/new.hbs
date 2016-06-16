@@ -1,8 +1,23 @@
 <div class="container">
+  <h1>患者基本信息</h1>
+  <hr />
   <div class="well">
     <form class="form-inline">
-      {{#inline-form-field}}身份证号{{/inline-form-field}}
-      {{#inline-form-field}}姓名{{/inline-form-field}}
+      {{#inline-form-field field=model.patName}}姓名{{/inline-form-field}}
+      {{#inline-form-field field=model.idCardNo}}身份证号{{/inline-form-field}}
+      {{#inline-form-field field=model.insuranceCode}}医保号{{/inline-form-field}}
+
+      {{#inline-form-field field=model.address}}地址{{/inline-form-field}}
+      {{#inline-form-field field=model.zipcode}}邮编{{/inline-form-field}}
+      {{#inline-form-field field=model.phoneNo}}电话号码{{/inline-form-field}}
+      {{#inline-form-field field=model.mobileNo}}手机号码{{/inline-form-field}}
+      {{#inline-form-field field=model.email}}邮箱{{/inline-form-field}}
+
+      {{#inline-form-field}}国籍{{/inline-form-field}}
+      {{#inline-form-field}}省{{/inline-form-field}}
+      {{#inline-form-field}}市{{/inline-form-field}}
+      {{#inline-form-field}}县/区{{/inline-form-field}}
+      {{#inline-form-field}}镇{{/inline-form-field}}
       <div class="form-group">
         <lable>性别</lable>
         <select class="form-control input-sm">
@@ -30,11 +45,7 @@
           <option>已婚</option>
           <option>未婚</option>
         </select>
-      </div>
-      {{#inline-form-field}}国籍{{/inline-form-field}}
-      {{#inline-form-field}}省{{/inline-form-field}}
-      {{#inline-form-field}}市{{/inline-form-field}}
-      {{#inline-form-field}}区{{/inline-form-field}}
+      </div>      
     </form>
   </div>
   <div class="well">

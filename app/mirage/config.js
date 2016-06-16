@@ -36,10 +36,10 @@ export default function() {
     };
   });
 
-  this.get('/inspection-apply-dynamics', function(){
+  this.get('/inspectionApplyDynamics', function(){
     return {
       data: [{
-        type: 'inspection-apply-dynamic',
+        type: 'inspection-apply-dynamics',
         id: 1,
         attributes:{
           firstName: 'zhang',
@@ -50,7 +50,7 @@ export default function() {
     };
   });
 
-  this.get('/inspection-applies', function(){
+  this.get('/inspectionApplies', function(){
     return {
       data: [{
         type: 'inspection-applies',
